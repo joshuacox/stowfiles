@@ -1,0 +1,19 @@
+# Inserts a blank line between shell prompts
+add_newline = false
+
+# Replace the '❯' symbol in the prompt with '➜'
+#[character] # The name of the module we are configuring is 'character'
+#success_symbol = '[󰰸 ➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+
+
+[shell]
+disabled = false
+bash_indicator = ""
+xonsh_indicator = "🐍"
+zsh_indicator = "[󰰸](bold green)"
+powershell_indicator = ""
+fish_indicator = "󰈺🐟"
+nu_indicator = "☢️"
+elvish_indicator = '🕺🎤🎸👑🕶️➜' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+cmd_indicator = ""
+tcsh_indicator = ""
