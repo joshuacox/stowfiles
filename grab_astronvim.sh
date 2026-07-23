@@ -5,5 +5,5 @@ if [[ -d ${TARGET_ASTRONVIM} ]]; then
   rm -rf ${TARGET_ASTRONVIM}
 fi
 mkdir -p ${TARGET_ASTRONVIM}/.config
-git clone --depth 1 https://github.com/AstroNvim/template ${TARGET_ASTRONVIM}/.config/nvim
+git clone --depth 1 https://github.com/AstroNvim/template ${TARGET_ASTRONVIM}/.config/astronvim
 rm -rf ${TARGET_ASTRONVIM}/.config/nvim/.git
