@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-stow starship
-stow waybar
-stow -vvv hypr
+stow -vv starship
+stow -vv waybar
+stow -vv hypr
