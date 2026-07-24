@@ -4,3 +4,4 @@ stow -v waybar
 stow -v hypr
 stow -v omarchynvim
 stow -v astronvim
+stow -v zsh
