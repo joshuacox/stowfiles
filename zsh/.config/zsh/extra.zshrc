@@ -1,3 +1,4 @@
+echo 'extra.zshrc'
 export PATH="$PATH:${HOME}/.local/share/gem/ruby/3.4.0/bin"
 export PATH=$HOME/.istioctl/bin:$PATH
 export THIS_S_TMP=$(mktemp --tmpdir='/tmp' --directory --suffix '.tmp' s.$USER.XXXXXXX)

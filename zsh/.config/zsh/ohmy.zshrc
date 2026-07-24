@@ -1,3 +1,4 @@
+echo 'ohmy.zshr'
 export ZSH="$HOME/.oh-my-zsh"
 
 # Uncomment the following line if you want to change the command execution time

@@ -1,3 +1,4 @@
+echo 'star.zshrc'
 prompt off
 export FZF_DEFAULT_COMMAND="fd --type f"
 if [ -n "${commands[fzf-share]}" ]; then
