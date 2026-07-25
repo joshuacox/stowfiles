@@ -1,4 +1,4 @@
-echo 'extra.zshrc'
+echo 'loading extra.zshrc'
 export PATH="$PATH:${HOME}/.local/share/gem/ruby/3.4.0/bin"
 export PATH=$HOME/.istioctl/bin:$PATH
 export THIS_S_TMP=$(mktemp --tmpdir='/tmp' --directory --suffix '.tmp' s.$USER.XXXXXXX)
@@ -47,29 +47,8 @@ source=$HOME/.ssh/.env
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-  #gpg-agent
-  #keychain
-export GPG_ID=C1F7EB1BDA1B9C8B
-export GPG_TTY=$(tty)
-eval $(keychain --nogui --eval id_ed25519 id_rsa $GPG_ID)
-#zstyle :omz:plugins:keychain agents gpg,ssh
-#zstyle :omz:plugins:keychain identities id_dsa id_ecdsa id_ed25519 id_rsa C1F7EB1BDA1B9C8B
-#zstyle :omz:plugins:keychain identities id_dsa id_ecdsa id_ed25519 id_rsa C1F7EB1BDA1B9C8B
-
-
-if [[ -x $HOME/.config/zsh/zshrc_hooks ]]; then . $HOME/.config/zsh/.zshrc_hooks; fi
-
-#echo blech | gpg --no-options --use-agent --no-tty --sign --local-user $GPG__ID -o- >/dev/null 2>&1
-#eval $(keychain --agents gpg,ssh --nogui --eval id_ed25519 id_rsa $GPG_ID)
-#gpg --no-options --use-agent --sign --local-user $GPG_ID
-
-#eval $(keychain --agents gpg,ssh --nogui --eval --quiet id_ed25519 40637AEA4089529B5187C8E073066CFE979E9AEB)
-#eval $(keychain --agents gpg,ssh --nogui --eval id_ed25519 40637AEA4089529B5187C8E073066CFE979E9AEB)
-#echo blech | gpg --no-options --use-agent --no-tty --sign --local-user $GPG__ID -o- >/dev/null 2>&1
-#eval $(keychain --agents gpg,ssh --nogui --eval id_ed25519 $GPG_ID)
-#eval `keychain --eval id_rsa id_dsa id_ecdsa`
-
 # User configuration
+export GPG_TTY=$(tty)
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -240,41 +219,9 @@ esac
 
 source <(katenary completion zsh)
 source <(velero completion zsh)
-complete -F __start_velero velero
-complete -F __start_velero v
+#complete -F __start_velero velero
+#complete -F __start_velero v
 
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-source "${HOME}/.local/share/dorothy/init.sh" # Dorothy
-
-# place this after nvm initialization!
-autoload -U add-zsh-hook
-
-load-nvmrc() {
-  local nvmrc_path
-  nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version
-    nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
-      nvm use
-    fi
-  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
-export PATH="/opt/himax/arm-gnu-toolchain-13.2.Rel1-x86_64-arm-none-eabi/bin:$PATH"
-
-fpath+=~/.zfunc; autoload -Uz compinit; compinit
 
 zstyle ':completion:*' menu select
 

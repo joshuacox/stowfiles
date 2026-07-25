@@ -1,5 +1,4 @@
-# ~.zshrc
-echo 'graysky.zshr'
+echo 'loading graysky.zshr'
 # works in conjunction with extra/grml-zsh-config
 #
 # general setup stuff

@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-stow -v starship
-stow -v waybar
+stow -v astronvim
 stow -v hypr
 stow -v omarchynvim
-stow -v astronvim
+stow -v starship
+stow -v tmuxinator
+stow -v waybar
 stow -v zsh

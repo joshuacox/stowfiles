@@ -1,0 +1,13 @@
+name: side
+root: /mnt/unreal
+tmux_command: byobu
+
+windows:
+  - top:
+      root: /mnt/unreal
+      layout: main-horizontal
+      panes:
+        - b:
+          - sudo btop
+        - nv:
+          - sudo nvtop
