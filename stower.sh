@@ -8,6 +8,7 @@ if [[ $# -eq 1 ]]; then
 TARGET=$1
 else
   useage
+  exit 1
 fi
 
 mkdir -p ${TARGET}/.config
