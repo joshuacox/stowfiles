@@ -6,3 +6,4 @@ stow -v starship
 stow -v tmuxinator
 stow -v waybar
 stow -v zsh
+stow -v zz

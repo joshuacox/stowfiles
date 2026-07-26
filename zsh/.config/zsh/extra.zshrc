@@ -77,18 +77,6 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export EDITOR=nvim
-alias vi=$EDITOR
-alias vim=$EDITOR
-alias lg=lazygit
-# Caleb
-alias ls=exa
-alias fabric=fabric-ai
-alias cat=bat
-alias boostrun='powerprofilesctl launch -p performance'
-alias goboost='(set -x; powerprofilesctl set performance; sudo cpupower frequency-set -g ondemand >&/dev/null;)'
-alias gonormal='(set -x; powerprofilesctl set balanced; sudo cpupower frequency-set -g schedutil >&/dev/null;)'
-alias gosilent='(set -x; powerprofilesctl set power-saver; sudo cpupower frequency-set -g schedutil >&/dev/null;)'
 
 source ~/.profile
 
