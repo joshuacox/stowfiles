@@ -5,3 +5,4 @@ stow -v hypr
 stow -v omarchynvim
 stow -v astronvim
 stow -v zsh
+stow -v zz
