@@ -1,0 +1,14 @@
+name: z
+tmux_command: byobu
+
+windows:
+  - 1: zsh
+  - 2: zsh 
+  - 3: zsh
+  - 4: zsh
+  - 5: zsh
+  - 5: zsh
+  - 6: zsh
+  - 7: zsh
+  - 8: zsh
+  - 9: sudo btop
