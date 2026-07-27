@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+TMP=$(mktemp -t -d --suffix=.logs comms.XXXX)
+export NIXOS_OZONE_WL=0
+
+runnr () {
+  systemd-run --scope \
+    -p CPUQuota=90% \
+    -p MemoryMax=2048M \
+    -p MemoryHigh=1920M \
+    --user \
+    nice -n7 \
+    ionice -c3 \
+    $@ &> $TMP/$1.log &
+}
+
+runnr discord
+sleep 1
+runnr element-desktop --password-store="gnome-libsecret"
+sleep 1
+runnr slack
+sleep 1
+#runnr telegram-desktop
+runnr Telegram
+runnr /home/thoth/Applications/WireSwiss_22b8933eca4984b56732cb4c2d384f8d --no-sandbox %U
+sleep 1
+runnr mattermost-desktop
+#sleep 1
+#runnr signal-desktop
+echo $TMP
+runnr mailsync
