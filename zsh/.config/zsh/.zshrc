@@ -1,3 +1,4 @@
+[[ -f $HOME/.config/zsh/alias.zshrc ]] && source $HOME/.config/zsh/alias.zshrc
 [[ -f $HOME/.secret/secret.zshrc ]] && source $HOME/.secret/secret.zshrc
 [[ -f $HOME/.config/zsh/extra.zshrc ]] && source $HOME/.config/zsh/extra.zshrc
 [[ -f $HOME/.config/zsh/idf.zshrc ]] && source $HOME/.config/zsh/idf.zshrc

@@ -17,5 +17,3 @@ horizontal_rule () {
 }
 horizontal_rule
 randosay
-randosay
-horizontal_rule
