@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 stow -v astronvim
+stow -v bin
 stow -v hypr
 stow -v k9s
 stow -v omarchynvim
