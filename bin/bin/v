@@ -1,0 +1,16 @@
+#!/bin/sh
+if [ $# -eq 0 ]; then
+  $EDITOR $(fzf --preview 'bat --color=always {}')
+elif [ $# -eq 1 ]; then
+  if [ -d $1 ]; then
+    TARGET_DIR=$1
+    set -x
+    $EDITOR $(fzf --walker-root=${TARGET_DIR} --preview 'bat --color=always {}')
+  else
+    $EDITOR $@
+  fi
+else
+ echo 'too many args, v expects at most one dir, example:'
+ echo 'v git/example'
+ exit 1
+fi
