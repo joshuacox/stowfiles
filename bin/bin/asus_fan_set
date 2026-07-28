@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -eux
+#35c:21%,58c:34%,61c:51%,64c:64%,67c:81%,70c:100%,70c:100%,70c:100%
+#CPU: enabled: false, 35c:21%,58c:34%,61c:47%,64c:64%,67c:77%,70c:100%,70c:100%,70c:100%
+#GPU: enabled: false, 35c:21%,58c:34%,61c:51%,64c:64%,67c:81%,70c:100%,70c:100%,70c:100%
+ASUS_FAN_PERF='35c:0,40c:14%,45c:33%,55c:66%,67c:81%,70c:88%,72c:95%,75c:100%'
+ASUS_FAN_BALANCED='35c:0,40c:5%,45c:25%,50c:33%,60c:61%,70c:83%,72c:95%,80c:100%'
+ASUS_FAN_QUIET='35c:0,45c:4%,50c:21%,60c:33%,65c:51%,75c:78%,77c:85%,80c:100%'
+asusctl fan-curve --mod-profile Performance --fan cpu --data ${ASUS_FAN_PERF} --enable-fan-curve true --enable-fan-curves true
+asusctl fan-curve --mod-profile Performance --fan gpu --data ${ASUS_FAN_PERF} --enable-fan-curve true --enable-fan-curves true
+asusctl fan-curve --mod-profile Balanced --fan cpu --data ${ASUS_FAN_BALANCED} --enable-fan-curve true --enable-fan-curves true
+asusctl fan-curve --mod-profile Balanced --fan gpu --data ${ASUS_FAN_BALANCED} --enable-fan-curve true --enable-fan-curves true
+asusctl fan-curve --mod-profile Quiet --fan cpu --data ${ASUS_FAN_QUIET} --enable-fan-curve true --enable-fan-curves true
+asusctl fan-curve --mod-profile Quiet --fan gpu --data ${ASUS_FAN_QUIET} --enable-fan-curve true --enable-fan-curves true
+#asusctl fan-curve --mod-profile Performance --fan gpu --data 35c:0,58c:24%,61c:51%,64c:64%,67c:81%,70c:100%,70c:100%,70c:100% --enable-fan-curve true --enable-fan-curves true
+#asusctl fan-curve --mod-profile Balanced --fan cpu --data 30c:0,40c:10,45c:20,48c:33,55c:55,60c:155,70c:175,80c:255 --enable-fan-curve true --enable-fan-curves true
+#asusctl fan-curve --mod-profile Balanced --fan gpu --data 30c:0,40c:10,45c:20,48c:33,55c:55,60c:155,70c:175,80c:255 --enable-fan-curve true --enable-fan-curves true
+#asusctl fan-curve --mod-profile Quiet --fan cpu --data 30c:0,40c:10,45c:20,50c:35,60c:55,75c:155,78c:175,80c:255 --enable-fan-curve true --enable-fan-curves true
+#asusctl fan-curve --mod-profile Quiet --fan gpu --data 30c:0,40c:10,45c:20,50c:35,60c:55,75c:155,78c:175,80c:255 --enable-fan-curve true --enable-fan-curves true
+asusctl fan-curve --mod-profile Performance --fan cpu --enable-fan-curves true
+asusctl fan-curve --mod-profile Performance --fan gpu --enable-fan-curves true
+asusctl fan-curve --mod-profile Balanced --fan cpu --enable-fan-curves true
+asusctl fan-curve --mod-profile Balanced --fan gpu --enable-fan-curves true
+asusctl fan-curve --mod-profile Quiet --fan cpu --enable-fan-curves true
+asusctl fan-curve --mod-profile Quiet --fan gpu --enable-fan-curves true
+asusctl fan-curve --get-enabled
+asusctl profile get
