@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 stow -v astronvim
 stow -v bin
-stow -v hypr
+#stow -v hypr
+stow -v hypr.conf
 stow -v k9s
 stow -v omarchynvim
 stow -v starship
