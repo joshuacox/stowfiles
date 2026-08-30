@@ -13,3 +13,4 @@ stow -v waybar
 stow -v zsh
 stow -v zz
 stow -v svim
+stow -v lazygit

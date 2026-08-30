@@ -1,6 +1,7 @@
 echo 'loading extra.zshrc'
 export PATH="$PATH:${HOME}/.local/share/gem/ruby/3.4.0/bin"
 export PATH=$HOME/.istioctl/bin:$PATH
+export PAGER="bat --paging=always"
 export THIS_S_TMP=$(mktemp --tmpdir='/tmp' --directory --suffix '.tmp' s.$USER.XXXXXXX)
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -83,8 +84,7 @@ source ~/.profile
 source ~/.bin/tmuxinator.zsh
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export BROWSER=firefox
-export PATH="${HOME}/bin:$PATH"
+export BROWSER=vivaldi
 export PATH="${HOME}/.cargo/bin:$PATH"
 
 export PATH="${HOME}/.bin:$PATH"
@@ -216,3 +216,8 @@ zstyle ':completion:*' menu select
 # opencode
 export PATH=/home/thoth/.opencode/bin:$PATH
 export PATH=$HOME/.istioctl/bin:$PATH
+export PATH="${HOME}/bin:$PATH"
+export K9S_SKIN=thoth
+export PATH="/mnt/unreal/UE/Engine/Binaries/Linux:$PATH"
+
+
