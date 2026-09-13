@@ -3,3 +3,4 @@
 
 # Added by Antigravity CLI installer
 export PATH="/home/djehauti/.local/bin:$PATH"
+export PATH=$HOME/.istioctl/bin:$PATH

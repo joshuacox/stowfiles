@@ -220,4 +220,6 @@ export PATH="${HOME}/bin:$PATH"
 export K9S_SKIN=thoth
 export PATH="/mnt/unreal/UE/Engine/Binaries/Linux:$PATH"
 
-
+. "$HOME/.local/share/../bin/env"
+# Added by Antigravity CLI installer
+export PATH="$HOME/.local/bin:$PATH"
