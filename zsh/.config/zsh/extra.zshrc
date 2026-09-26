@@ -157,7 +157,7 @@ export XENVIRONMENT="${HOME}/.Xresources"
 #[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 #eval "$(pyenv init - zsh)"
 #eval "$(pyenv virtualenv-init - zsh)"
-#export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+#export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"#
 export PATH="/usr/lib/distcc/bin:$PATH"
 export PATH="${HOME}/.npm-global/bin:$PATH"
 export PATH="${HOME}/.gem/ruby/3.0.0/bin:$PATH"
@@ -179,9 +179,9 @@ eval $(thefuck --alias)
 eval "$(uv generate-shell-completion bash)"
 # Added by `rbenv init` on Sat Nov  9 09:10:05 PM CST 2024
 #eval "$(~/.rbenv/bin/rbenv init - --no-rehash zsh)"
-eval "$(rbenv init - --no-rehash zsh)"
+#eval "$(rbenv init - --no-rehash zsh)"
 # assuming that rbenv was installed to `~/.rbenv`
-FPATH=~/.rbenv/completions:"$FPATH"
+#FPATH=~/.rbenv/completions:"$FPATH"
 
 autoload -U compinit
 compinit
@@ -205,7 +205,7 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-source <(katenary completion zsh)
+#source <(katenary completion zsh)
 source <(velero completion zsh)
 #complete -F __start_velero velero
 #complete -F __start_velero v

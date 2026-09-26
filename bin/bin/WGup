@@ -1,0 +1,20 @@
+#!/bin/bash
+useage () {
+  echo "$0 wg0.conf"
+}
+if [[ $# -eq 0 ]]; then
+  wgquick=$(sudo ls -alh /etc/wireguard/|awk '{print $9}'|grep -P '^se-'|shuf|head -n5|tail -n1|sed 's/\.conf$//')
+elif [[ $# -eq 1 ]]; then
+  wgquick=$1
+else
+  echo 'too many args'
+  echo "$@"
+  useage
+  exit 1
+fi
+
+sudo resolvconf -u
+res
+sudo wg-quick up $wgquick
+sudo wg
+

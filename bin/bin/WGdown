@@ -1,0 +1,12 @@
+#!/bin/bash
+wgquicks=$(sudo wg|grep 'interface:'|sed 's/interface: //')
+if [[ -z $wgquicks ]]; then
+  echo 'no wg up'
+  exit 1
+else
+  for wgquick in $wgquicks; do
+    sudo wg
+    sudo wg-quick down $wgquick
+  done
+fi
+
