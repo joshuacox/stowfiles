@@ -24,8 +24,8 @@ udisabled() { systemctl --user disable "$1"; }
 
 ## general
 export EDITOR=tvim
-alias vi=$EDITOR
-alias vim=zz
+alias vim=${EDITOR}
+alias vi=${EDITOR}
 alias lg=lazygit
 alias ls=exa
 alias fabric=fabric-ai

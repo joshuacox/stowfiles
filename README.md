@@ -10,3 +10,9 @@ Invoke inside the stowfiles directory like this:
 ```
 stow -vv hypr
 ```
+
+or use the meta-script:
+
+```
+./stow_all.sh
+```

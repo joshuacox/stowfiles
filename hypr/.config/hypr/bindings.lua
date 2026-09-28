@@ -27,7 +27,8 @@
 -- o.bind("SUPER + SHIFT + S", nil, "omarchy-capture-screenshot")
 -- o.bind("SUPER + H", nil, "voxtype record toggle")
 -- o.bind("SUPER + PERIOD", nil, "omarchy-shell shell toggle omarchy.emojis")
--- oldconf = bindd = SUPER ALT, O, Opaque, exec, hyprctl dispatch setprop activewindow opacity 1.0
 o.bind("SUPER + ALT + O", nil, "hyprctl dispatch setprop activewindow opacity 1.0")
--- oldconf = bindd = SUPER ALT, T, Transparent, exec, hyprctl dispatch setprop activewindow opacity 0.5
 o.bind("SUPER + ALT + T", nil, "hyprctl dispatch setprop activewindow opacity 0.5")
+-- Toggle the 'tekromancy' special workspace
+hl.bind("CTRL + SPACE", hl.dsp.workspace.toggle_special("tekromancy"))
+o.bind("CTRL + SHIFT + SPACE", "Move window to scratchpad", hl.dsp.window.move({ workspace = "special:tekromancy", follow = false }))

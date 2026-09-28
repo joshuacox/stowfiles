@@ -1,6 +1,7 @@
 echo 'loading extra.zshrc'
 export PATH="$PATH:${HOME}/.local/share/gem/ruby/3.4.0/bin"
 export PATH=$HOME/.istioctl/bin:$PATH
+export PAGER="bat --paging=always"
 export THIS_S_TMP=$(mktemp --tmpdir='/tmp' --directory --suffix '.tmp' s.$USER.XXXXXXX)
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -83,8 +84,7 @@ source ~/.profile
 source ~/.bin/tmuxinator.zsh
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export BROWSER=firefox
-export PATH="${HOME}/bin:$PATH"
+export BROWSER=vivaldi
 export PATH="${HOME}/.cargo/bin:$PATH"
 
 export PATH="${HOME}/.bin:$PATH"
@@ -157,7 +157,7 @@ export XENVIRONMENT="${HOME}/.Xresources"
 #[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 #eval "$(pyenv init - zsh)"
 #eval "$(pyenv virtualenv-init - zsh)"
-#export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+#export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"#
 export PATH="/usr/lib/distcc/bin:$PATH"
 export PATH="${HOME}/.npm-global/bin:$PATH"
 export PATH="${HOME}/.gem/ruby/3.0.0/bin:$PATH"
@@ -179,9 +179,9 @@ eval $(thefuck --alias)
 eval "$(uv generate-shell-completion bash)"
 # Added by `rbenv init` on Sat Nov  9 09:10:05 PM CST 2024
 #eval "$(~/.rbenv/bin/rbenv init - --no-rehash zsh)"
-eval "$(rbenv init - --no-rehash zsh)"
+#eval "$(rbenv init - --no-rehash zsh)"
 # assuming that rbenv was installed to `~/.rbenv`
-FPATH=~/.rbenv/completions:"$FPATH"
+#FPATH=~/.rbenv/completions:"$FPATH"
 
 autoload -U compinit
 compinit
@@ -205,7 +205,7 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-source <(katenary completion zsh)
+#source <(katenary completion zsh)
 source <(velero completion zsh)
 #complete -F __start_velero velero
 #complete -F __start_velero v
@@ -216,3 +216,10 @@ zstyle ':completion:*' menu select
 # opencode
 export PATH=/home/thoth/.opencode/bin:$PATH
 export PATH=$HOME/.istioctl/bin:$PATH
+export PATH="${HOME}/bin:$PATH"
+export K9S_SKIN=thoth
+export PATH="/mnt/unreal/UE/Engine/Binaries/Linux:$PATH"
+
+. "$HOME/.local/share/../bin/env"
+# Added by Antigravity CLI installer
+export PATH="$HOME/.local/bin:$PATH"
