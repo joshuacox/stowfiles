@@ -16,3 +16,8 @@ or use the meta-script:
 ```
 ./stow_all.sh
 ```
+
+## Documentation
+
+Full interactive documentation, package breakdown, and automation guide are hosted at:
+[https://joshuacox.github.io/stowfiles/](https://joshuacox.github.io/stowfiles/)
