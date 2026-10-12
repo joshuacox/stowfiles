@@ -27,8 +27,23 @@
 -- o.bind("SUPER + SHIFT + S", nil, "omarchy-capture-screenshot")
 -- o.bind("SUPER + H", nil, "voxtype record toggle")
 -- o.bind("SUPER + PERIOD", nil, "omarchy-shell shell toggle omarchy.emojis")
-o.bind("SUPER + ALT + O", nil, "hyprctl dispatch setprop activewindow opacity 1.0")
-o.bind("SUPER + ALT + T", nil, "hyprctl dispatch setprop activewindow opacity 0.5")
+
+-- Native Lua window opacity controls
+--
+
+-- Native Lua live window opacity controls
+o.bind("SUPER + ALT + O", "Set active window opaque", function()
+	hl.dispatch(hl.dsp.window.set_prop({ prop = "opacity", value = "1.0", window = "active" }))
+end)
+
+o.bind("SUPER + ALT + T", "Set active window transparent", function()
+	hl.dispatch(hl.dsp.window.set_prop({ prop = "opacity", value = "0.8", window = "active" }))
+end)
+
 -- Toggle the 'tekromancy' special workspace
 hl.bind("CTRL + SPACE", hl.dsp.workspace.toggle_special("tekromancy"))
-o.bind("CTRL + SHIFT + SPACE", "Move window to scratchpad", hl.dsp.window.move({ workspace = "special:tekromancy", follow = false }))
+o.bind(
+	"CTRL + SHIFT + SPACE",
+	"Move window to scratchpad",
+	hl.dsp.window.move({ workspace = "special:tekromancy", follow = false })
+)
