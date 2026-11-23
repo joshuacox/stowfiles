@@ -1,0 +1,14 @@
+name: ai
+tmux_command: byobu
+
+windows:
+  - 0: zsh
+  - 1: zsh
+  - 2: zsh
+  - ax: zsh -c "cd /mnt/unreal/git/axonwall; git pull"
+  - na: zsh -c "cd /mnt/unreal/git/namgen; git pull; pnpm i && pnpm dev"
+  - el: zsh -c "cd /mnt/unreal/git/eluvix; git pull; pnpm i && pnpm dev"
+  - le: zsh -c "lemonade list --downloaded"
+  - ka: WGup kaus_artemis
+  - x: xdna-top
+  - b: sudo btop
